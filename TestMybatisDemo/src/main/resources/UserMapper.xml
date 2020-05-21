@@ -1,0 +1,15 @@
+<mapper namespace="user">
+
+    <!--sql语句:
+        sql语句的唯一标识是：namespace.id组成
+    -->
+    <select id="selectList" resultType="com.pojo.User">
+        select * from animal
+    </select>
+
+    <select id="selectOne" resultType="com.pojo.User" paramterType="com.pojo.User">
+        <!--直接写？是存在问题的，未来填充数据不知道填充什么数据-->
+        select * from animal where id=? and name=?
+    </select>
+
+</mapper>

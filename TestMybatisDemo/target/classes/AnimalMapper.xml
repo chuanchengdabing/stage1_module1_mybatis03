@@ -1,0 +1,28 @@
+<mapper namespace="com.lagou.dao.AnimalDao">
+
+    <!--sql语句:
+        sql语句的唯一标识是：namespace.id组成
+    -->
+    <select id="queryAll" resultType="com.lagou.pojo.Animal">
+        select * from animal
+    </select>
+
+    <select id="queryOneByIdAndName" resultType="com.lagou.pojo.Animal" paramterType="com.lagou.pojo.Animal">
+        select * from animal where id=#{id} and name=#{name}
+    </select>
+
+    <insert id="insertAnimal" resultType="java.lang.Integer" paramterType="com.lagou.pojo.Animal">
+        insert into animal values(#{id},#{name})
+    </insert>
+
+    <delete id="deleteAnimal" resultType="java.lang.Integer" paramterType="com.lagou.pojo.Animal">
+        delete from animal where id=#{id}
+    </delete>
+
+
+
+    <update id="updateAnimal" resultType="java.lang.Integer" paramterType="com.lagou.pojo.Animal">
+        update animal set name=#{name} where id=#{id}
+    </update>
+
+</mapper>
